@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import ReactAudioPlayer from "react-audio-player";
-class Intermediate extends Component {
+class Advanced extends Component {
   render() {
-    const mapIntermediate = this.props.mapObjectIntermediate;
-    const onPick = this.props.pickIntermediate;
+    //this const declaration connects this Beginner class to the App class. It is the way to pass the//
+    //apiDataBeginner state to call the map function on it from within this component//
+    const mapAdvanced = this.props.mapObjectAdvanced;
+    const onPick = this.props.pickAdvanced;
     const childCheckButton = this.props.childCheckButton;
 
     return (
       <div className="card-deck">
-        {mapIntermediate.map((person) => (
+        {mapAdvanced.map((person) => (
           <div className="card text-center">
             <img
               className="card-img-top"
@@ -38,4 +40,4 @@ class Intermediate extends Component {
   }
 }
 
-export default Intermediate;
+export default Advanced;

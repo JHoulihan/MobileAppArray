@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import ReactAudioPlayer from "react-audio-player";
-class Intermediate extends Component {
+class Custom extends Component {
   render() {
-    const mapIntermediate = this.props.mapObjectIntermediate;
-    const onPick = this.props.pickIntermediate;
-    const childCheckButton = this.props.childCheckButton;
-
+    //this const declaration connects this Beginner class to the App class. It is the way to pass the//
+    //apiDataBeginner state to call the map function on it from within this component//
+    const mapCustom = this.props.mapObjectCustom;
     return (
       <div className="card-deck">
-        {mapIntermediate.map((person) => (
+        {mapCustom.map((person) => (
           <div className="card text-center">
             <img
               className="card-img-top"
@@ -22,20 +21,20 @@ class Intermediate extends Component {
               <p className="card-text">{person.description}</p>
 
               <ReactAudioPlayer src={person.audio} autoplay controls />
-              <button
-                className="mt-auto btn btn-primary btn-lg btn-block"
-                disabled={childCheckButton(person.id) && true}
-                onClick={() => onPick(person.id)}
-                type="button"
-              >
-                {childCheckButton(person.id) ? "Stretch Added" : "Add"}
-              </button>
             </div>
           </div>
         ))}
+        {mapCustom.length <= 0 && (
+          <div className="card">
+            <img src="https://i.imgur.com/SHoxUWx.gif" alt="Empty"></img>
+            <p className="card-text">
+              There's nothing here, add some stretches.
+            </p>
+          </div>
+        )}
       </div>
     );
   }
 }
 
-export default Intermediate;
+export default Custom;
