@@ -6,6 +6,7 @@ class Custom extends Component {
     //apiDataBeginner state to call the map function on it from within this component//
     const mapCustom = this.props.mapObjectCustom;
     return (
+      <div>
       <div className="card-deck">
         {mapCustom.map((person) => (
           <div className="card text-center">
@@ -20,18 +21,19 @@ class Custom extends Component {
               <h5 className="car-title">{person.position}</h5>
               <p className="card-text">{person.description}</p>
 
-              <ReactAudioPlayer src={person.audio} autoplay controls />
+              <ReactAudioPlayer className="mt-auto" src={person.audio} autoplay controls />
             </div>
           </div>
         ))}
         {mapCustom.length <= 0 && (
-          <div className="card">
+          <div className="card" style={{width: "25%"}}>
             <img src="https://i.imgur.com/SHoxUWx.gif" alt="Empty"></img>
             <p className="card-text">
               There's nothing here, add some stretches.
             </p>
           </div>
         )}
+      </div>
       </div>
     );
   }

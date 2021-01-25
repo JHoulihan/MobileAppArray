@@ -20,7 +20,7 @@ class Intermediate extends Component {
               <h3 className="card-title">{person.body_part}</h3>
               <h5 className="car-title">{person.position}</h5>
               <p className="card-text">{person.description}</p>
-
+              <div className="mt-auto">
               <ReactAudioPlayer src={person.audio} autoplay controls />
               <button
                 className="mt-auto btn btn-primary btn-lg btn-block"
@@ -30,6 +30,8 @@ class Intermediate extends Component {
               >
                 {childCheckButton(person.id) ? "Stretch Added" : "Add"}
               </button>
+
+              </div>
             </div>
           </div>
         ))}

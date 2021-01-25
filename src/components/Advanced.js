@@ -22,16 +22,17 @@ class Advanced extends Component {
               <h3 className="card-title">{person.body_part}</h3>
               <h5 className="car-title">{person.position}</h5>
               <p className="card-text">{person.description}</p>
-
-              <ReactAudioPlayer src={person.audio} autoplay controls />
+              <div className="mt-auto">
+              <ReactAudioPlayer  src={person.audio} autoplay controls />
               <button
-                className="mt-auto btn btn-primary btn-lg btn-block"
+                className="btn btn-primary btn-lg btn-block"
                 disabled={childCheckButton(person.id) && true}
                 onClick={() => onPick(person.id)}
                 type="button"
               >
                 {childCheckButton(person.id) ? "Stretch Added" : "Add"}
               </button>
+              </div>
             </div>
           </div>
         ))}
